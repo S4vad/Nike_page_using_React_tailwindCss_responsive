@@ -10,7 +10,7 @@ const Nav = () => {
     setIsMobileShown(!isMobileShown);
   };
   return (
-    <nav className="flex flex-wrap items-center justify-between">
+    <nav className="z-10 relative flex flex-wrap items-center justify-between">
       <a href="">
         <SiNike className="h-20 w-20  " />
       </a>
@@ -27,8 +27,9 @@ const Nav = () => {
           {ROUTES.map((routes, index) => {
             return (
               <li
-                className={`rounded cursor-pointer py-2 px-3 ${index == 0 ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"}`}
+                className={`lg:hover:bg-transparent lg:hover:text-blue-500 rounded cursor-pointer py-2 px-3 ${index == 0 ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"} ${(index==3 || index==4) && "lg:text-white"}`}
                 key={index}
+
               >
                 {routes}
               </li>
@@ -36,8 +37,8 @@ const Nav = () => {
           })}
         </ul>
       </div>
-      <div className="fixed left-4 bottom-4 lg:static">
-        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md">
+      <div className="fixed left-4 bottom-4 lg:static lg:mr-8">
+        <div className="btn-press-anim flex-center h-12 w-12 rounded-full bg-white shadow-md">
           <TbShoppingBag />
         </div>
       </div>
