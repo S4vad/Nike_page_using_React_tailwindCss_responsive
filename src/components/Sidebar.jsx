@@ -2,9 +2,9 @@ import React from "react";
 
 const Sidebar = ({ children, isOpen, onClickClose }) => {
   return (
-    <div>
+    <div >
       <div
-        className={`p-5  fixed top-0 right-0 z-50 h-full w-full md:w-[50%] lg:w-[35%] shadow-lg bg-white transform transition duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`overflow-y-auto p-5  fixed top-0 right-0 z-50 h-full w-full md:w-[50%] lg:w-[35%] shadow-lg bg-white transform transition duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <button
           onClick={onClickClose}
