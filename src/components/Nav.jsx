@@ -4,7 +4,7 @@ import { SiNike } from "react-icons/si";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
-const Nav = () => {
+const Nav = ({onClickShoppingBtn}) => {
   const [isMobileShown, setIsMobileShown] = useState(false);
   const handleClick = () => {
     setIsMobileShown(!isMobileShown);
@@ -37,7 +37,7 @@ const Nav = () => {
           })}
         </ul>
       </div>
-      <div className="fixed left-4 bottom-4 lg:static lg:mr-8">
+      <div onClick={onClickShoppingBtn} className="fixed left-4 bottom-4 lg:static lg:mr-8">
         <div className="btn-press-anim flex-center h-12 w-12 rounded-full bg-white shadow-md">
           <TbShoppingBag />
         </div>

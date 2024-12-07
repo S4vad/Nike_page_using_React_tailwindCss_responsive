@@ -26,7 +26,7 @@ const shoeDetails = () => {
 
         <div className="space-x-10">
           <button className="btn-press-anim h-14 w-44  bg-black text-white hover:bg-gray-900 active:bg-gray-600 ">
-            Add to bagb
+            Add to bag
           </button>
           <a
             href="#"
