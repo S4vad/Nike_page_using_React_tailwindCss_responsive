@@ -2,9 +2,9 @@ import React from "react";
 
 const Sidebar = ({ children, isOpen, onClickClose }) => {
   return (
-    <div >
+    <div>
       <div
-        className={`overflow-y-auto p-5  fixed top-0 right-0 z-50 h-full w-full md:w-[50%] lg:w-[35%] shadow-lg bg-white transform transition duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`dark:bg-night overflow-y-auto p-5  fixed top-0 right-0 z-50 h-full w-full md:w-[50%] lg:w-[35%] shadow-lg bg-white transform transition duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <button
           onClick={onClickClose}
@@ -14,7 +14,12 @@ const Sidebar = ({ children, isOpen, onClickClose }) => {
         </button>
         {children}
       </div>
-      {isOpen && <div onClick={onClickClose} className="fixed left-0 top-0 z-20 h-full w-full bg-black opacity-50" />}
+      {isOpen && (
+        <div
+          onClick={onClickClose}
+          className="fixed left-0 top-0 z-20 h-full w-full bg-black opacity-50"
+        />
+      )}
     </div>
   );
 };

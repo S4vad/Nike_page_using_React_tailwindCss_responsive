@@ -5,7 +5,7 @@ import { QTY, SIZES } from "../constant";
 
 const shoeDetails = () => {
   return (
-    <div className="flex flex-col lg:flex-row-reverse space-y-4">
+    <div className="flex flex-col lg:flex-row-reverse space-y-4 dark:text-white">
       <div className="flex-1 lg:-mt-32 lg:ml-28">
         <div className="animate- h-full flex-center bg-gradient-to-br from-[#F637CF] via-[#E3D876] to-[#4DD4C6]">
           <img className="animate-float" src={nike} />
@@ -25,7 +25,7 @@ const shoeDetails = () => {
         </div>
 
         <div className="space-x-10">
-          <button className="btn-press-anim h-14 w-44  bg-black text-white hover:bg-gray-900 active:bg-gray-600 ">
+          <button className="btn-press-anim h-14 w-44 dark:bg-white dark:text-black bg-black text-white hover:bg-gray-900 active:bg-gray-600 ">
             Add to bag
           </button>
           <a

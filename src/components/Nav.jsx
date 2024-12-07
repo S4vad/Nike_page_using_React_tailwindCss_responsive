@@ -12,18 +12,18 @@ const Nav = ({onClickShoppingBtn}) => {
   return (
     <nav className="z-10 relative flex flex-wrap items-center justify-between">
       <a href="">
-        <SiNike className="h-20 w-20  " />
+        <SiNike className="h-20 w-20 dark:fill-white" />
       </a>
       <button
         onClick={handleClick}
-        className="lg:hidden hover:bg-gray-100 p-2 rounded-lg focus:ring-2 focus:bg-gray-200"
+        className="dark:text-gray-400 dark:hover-bg-gray-700  lg:hidden hover:bg-gray-100 p-2 rounded-lg focus:ring-2 focus:bg-gray-200"
       >
         <RxHamburgerMenu size={25} />
       </button>
       <div
         className={`${!isMobileShown && "hidden"} w-full lg:w-auto  lg:block`}
       >
-        <ul className="lg:space-x-8 flex flex-col lg:flex-row rouded-lg border border-gray-100 lg:border-none bg-gray-50 lg:bg-transparent  p-4 text-lg">
+        <ul className="lg:space-x-8 flex flex-col lg:flex-row rouded-lg border border-gray-100 lg:border-none bg-gray-50 lg:bg-transparent  p-4 text-lg lg:dark:text-white">
           {ROUTES.map((routes, index) => {
             return (
               <li
