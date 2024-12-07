@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./components/Nav";
-import ShoeDetails from "./components/ShoeDetails";
+import ShoeDetails from "./components/shoeDetails";
 import NewArrivalSection from "./components/NewArrivalSection";
 import { SHOE_LIST } from "./constant";
 import Sidebar from "./components/Sidebar";
@@ -17,13 +17,14 @@ const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem("isDarkMode")
-    if(isDarkMode==="true"){
+    const isDarkMode = localStorage.getItem("isDarkMode");
+    if (isDarkMode === "true") {
       window.document.documentElement.classList.add("dark");
     }
-  })
+  });
 
   const toggleDarkMode = () => {
     window.document.documentElement.classList.toggle("dark");
@@ -37,9 +38,9 @@ const App = () => {
     <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
 
-      <ShoeDetails />
+      <ShoeDetails shoe={currentShoe} />
 
-      <NewArrivalSection items={SHOE_LIST} />
+      <NewArrivalSection items={SHOE_LIST} onClickCard={setCurrentShoe} />
 
       <Sidebar
         isOpen={isSidebarOpen}
