@@ -12,11 +12,21 @@ const App = () => {
   const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
   const [cartItems, setCartItems] = useState([]);
 
+  const removeFromCart = (productId) => {
+    console.log("***", productId);
+    const updatedCartItems = [...cartItems];
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.product.id === productId
+    );
+    updatedCartItems.splice(existingItemIndex, 1);
+    setCartItems(updatedCartItems);
+  };
+
   const addToCart = (product, qty, size) => {
     if (qty && size) {
       const updatedCartItems = [...cartItems];
       const existingItemIndex = cartItems.findIndex(
-        (item) => item.product.id === product.id,
+        (item) => item.product.id === product.id
       );
       if (existingItemIndex > -1) {
         updatedCartItems[existingItemIndex].qty = qty;
@@ -56,7 +66,7 @@ const App = () => {
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart CartItems={cartItems} />
+        <Cart CartItems={cartItems} onClickTrash={removeFromCart} />
       </Sidebar>
 
       <div className=" fixed bottom-4 right-4">

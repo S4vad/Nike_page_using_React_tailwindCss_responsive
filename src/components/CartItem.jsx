@@ -4,7 +4,7 @@ import Select from "./Select";
 import { QTY, SIZES } from "../constant";
 
 // {item:{product,qty,size} is taking  all simultaneosly in Cart.jsx it pass only one and here splittin}
-const CartItem = ({ item: { product, qty, size } }) => {
+const CartItem = ({ item: { product, qty, size } ,onClickTrash}) => {
   return (
     <div className="p-2 hover:bg-[#DAFFA2] cursor-pointer bg-gray-50 space-y-2 dark:bg-transparent dark:hover:bg-night-50">
       <div className="flex  space-x-2">
@@ -34,7 +34,7 @@ const CartItem = ({ item: { product, qty, size } }) => {
             <Select value={qty} title="" options={QTY} className={"w-16 p-1"} />
           </div>
         </div>
-        <button>
+        <button onClick={() => onClickTrash(product.id)}>
           <CiTrash size={25} className="text-black" />
         </button>
       </div>

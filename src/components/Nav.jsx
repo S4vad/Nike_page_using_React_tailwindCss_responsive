@@ -4,7 +4,7 @@ import { SiNike } from "react-icons/si";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
-const Nav = ({onClickShoppingBtn}) => {
+const Nav = ({ onClickShoppingBtn }) => {
   const [isMobileShown, setIsMobileShown] = useState(false);
   const handleClick = () => {
     setIsMobileShown(!isMobileShown);
@@ -27,9 +27,8 @@ const Nav = ({onClickShoppingBtn}) => {
           {ROUTES.map((routes, index) => {
             return (
               <li
-                className={`lg:hover:bg-transparent lg:hover:text-blue-500 rounded cursor-pointer py-2 px-3 ${index == 0 ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"} ${(index==3 || index==4) && "lg:text-white"}`}
+                className={`lg:hover:bg-transparent lg:hover:text-blue-500 rounded cursor-pointer py-2 px-3 ${index == 0 ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"} ${(index == 3 || index == 4) && "lg:text-white"}`}
                 key={index}
-
               >
                 {routes}
               </li>
@@ -37,7 +36,10 @@ const Nav = ({onClickShoppingBtn}) => {
           })}
         </ul>
       </div>
-      <div onClick={onClickShoppingBtn} className="fixed left-4 bottom-4 lg:static lg:mr-8">
+      <div
+        onClick={onClickShoppingBtn}
+        className="fixed left-4 bottom-4 lg:static lg:mr-8"
+      >
         <div className="btn-press-anim flex-center h-12 w-12 rounded-full bg-white shadow-md">
           <TbShoppingBag />
         </div>
