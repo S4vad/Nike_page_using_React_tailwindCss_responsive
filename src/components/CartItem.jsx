@@ -11,7 +11,9 @@ const CartItem = ({ item: { product, qty, size } }) => {
         <img className="h-24" src={product.src} />
         <div className="space-y-2">
           <div className="font-bold dark:text-white">{product.title}</div>
-          <div className="text-sm text-gray-400 dark:text-white">{product.description}</div>
+          <div className="text-sm text-gray-400 dark:text-white">
+            {product.description}
+          </div>
         </div>
 
         <div className="font-bold dark:text-white">{product.price}</div>
@@ -21,7 +23,7 @@ const CartItem = ({ item: { product, qty, size } }) => {
           <div>
             <div className="font-bold dark:text-white">SIZE</div>
             <Select
-              defaultValue={size}
+              value={size}
               title=""
               options={SIZES}
               className={"w-16 p-1 pl-2"}
@@ -29,15 +31,10 @@ const CartItem = ({ item: { product, qty, size } }) => {
           </div>
           <div>
             <div className="font-bold dark:text-white">QTY</div>
-            <Select
-              defaultValue={qty}
-              title=""
-              options={QTY}
-              className={"w-16 p-1"}
-            />
+            <Select value={qty} title="" options={QTY} className={"w-16 p-1"} />
           </div>
         </div>
-        <button className="">
+        <button>
           <CiTrash size={25} className="text-black" />
         </button>
       </div>
