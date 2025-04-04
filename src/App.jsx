@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./components/Nav";
-import ShoeDetails from "./components/shoeDetails";
+import ShoeDetails from "./components/ShoeDetails";
 import NewArrivalSection from "./components/NewArrivalSection";
 import { SHOE_LIST } from "./constant";
 import Sidebar from "./components/Sidebar";
